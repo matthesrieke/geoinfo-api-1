@@ -19,6 +19,9 @@ public class WeatherRetrieverImpl {
     }
     
     public Weather retrieve(City city) throws UnsupportedCountryException, IOException {
+        if (city.getCountry() == null) {
+            throw new UnsupportedCountryException("Country not supported!", new NullPointerException());
+        }
         if (!"germany".equalsIgnoreCase(city.getCountry())) {
             throw new UnsupportedCountryException("Country not supported!");
         }

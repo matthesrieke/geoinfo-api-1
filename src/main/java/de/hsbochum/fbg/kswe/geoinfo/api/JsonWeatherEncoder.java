@@ -25,6 +25,8 @@ public class JsonWeatherEncoder {
         tempNode.put("unit", "C");
         weatherNode.set("temperatur", tempNode);
         
+        node.set("phenomena", weatherNode);
+        
         return node.toString();
     }
     

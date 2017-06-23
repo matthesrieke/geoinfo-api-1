@@ -1,4 +1,5 @@
 
+
 package de.hsbochum.fbg.kswe.geoinfo.api;
 
 import java.io.IOException;
@@ -16,8 +17,22 @@ public class WeatherRetrieverImplTest {
         
         Weather weather = retriever.retrieve(new City("Bochum", "Germany"));
         float temp = weather.getTemp();
-        
+        float rain = weather.getRain();
+        float speed = weather.getWindSpeed();
         //check and assert a range that is suitable for °C
     }
 
+    @Test(expected = UnsupportedCountryException.class)
+    public void testException() throws UnsupportedCountryException, IOException {
+        WeatherRetrieverImpl retriever = new WeatherRetrieverImpl();
+        
+        retriever.retrieve(new City("Bochum", "Australia"));
+    }
+    
+    @Test(expected = UnsupportedCountryException.class)
+    public void testNullException() throws UnsupportedCountryException, IOException {
+        WeatherRetrieverImpl retriever = new WeatherRetrieverImpl();
+        
+        retriever.retrieve(new City("Bochum", null));
+    }
 }
