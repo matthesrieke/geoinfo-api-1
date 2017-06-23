@@ -1,5 +1,7 @@
 # KSwe SoSe 2017 - Aufgabe 8
 
+[![Build Status](https://travis-ci.org/matthesrieke/geoinfo-api-1.svg?branch=master)](https://travis-ci.org/matthesrieke/geoinfo-api-1) [![codecov.io](https://codecov.io/github/matthesrieke/geoinfo-api-1/coverage.svg?branch=master)](https://codecov.io/github/matthesrieke/geoinfo-api-1?branch=master)
+
 Debugging und Continuous Integration.
 
 ## Vorgehensweise
